@@ -19,6 +19,22 @@ func (c KeyAuth) id() *string {
 	return c.ID
 }
 
+// LimitKeyQuota represents a limit-key-quota credential in Kong.
+// +k8s:deepcopy-gen=true
+type LimitKeyQuota struct {
+	Consumer  		*Consumer `json:"consumer,omitempty" yaml:"consumer,omitempty"`
+	CreatedAt 		*int      `json:"created_at,omitempty" yaml:"created_at,omitempty"`
+	ID        		*string   `json:"id,omitempty" yaml:"id,omitempty"`
+	Key       		*string   `json:"key,omitempty" yaml:"key,omitempty"`
+	LimitKeyQuota *int   		`json:"limit_key_quota,omitempty" yaml:"limit_key_quota,omitempty"`
+	TTL       		*int      `json:"ttl,omitempty" yaml:"ttl,omitempty"`
+	Tags      		[]*string `json:"tags,omitempty" yaml:"tags,omitempty"`
+}
+
+func (c LimitKeyQuota) id() *string {
+	return c.ID
+}
+
 // BasicAuth represents a basic-auth credential in Kong.
 // +k8s:deepcopy-gen=true
 type BasicAuth struct {
