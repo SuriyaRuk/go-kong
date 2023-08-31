@@ -26,7 +26,7 @@ type abstractCredentialService interface {
 type credentialService service
 
 var credPath = map[string]string{
-	"cf":   "key-auth",
+	"key-auth":   "key-auth",
 	"basic-auth": "basic-auth",
 	"hmac-auth":  "hmac-auth",
 	"jwt-auth":   "jwt",
