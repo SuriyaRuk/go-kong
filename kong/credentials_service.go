@@ -15,7 +15,7 @@ type abstractCredentialService interface {
 	// Get fetches a credential of credType with credIdentifier from Kong.
 	Get(ctx context.Context, credType string, consumerUsernameOrID *string,
 		credIdentifier *string) (json.RawMessage, error)
-	// Update updates credential in Kong
+	// Update updates credential in Kongf
 	Update(ctx context.Context, credType string, consumerUsernameOrID *string,
 		credential interface{}) (json.RawMessage, error)
 	// Delete deletes a credential in Kong
@@ -26,13 +26,14 @@ type abstractCredentialService interface {
 type credentialService service
 
 var credPath = map[string]string{
-	"key-auth":   "key-auth",
+	"cf":   "key-auth",
 	"basic-auth": "basic-auth",
 	"hmac-auth":  "hmac-auth",
 	"jwt-auth":   "jwt",
 	"acl":        "acls",
 	"oauth2":     "oauth2",
 	"mtls-auth":  "mtls-auth",
+	"limit-key-quota":  "limit-key-quota",
 }
 
 // Create creates a credential in Kong of type credType.
