@@ -1,4 +1,4 @@
-module github.com/kong/go-kong
+module github.com/SuriyaRuk/go-kong
 
 go 1.19
 

@@ -67,6 +67,7 @@ type Client struct {
 
 	credentials       abstractCredentialService
 	KeyAuths          AbstractKeyAuthService
+	LimitKeyQuotas          AbstractLimitKeyQuotaService
 	BasicAuths        AbstractBasicAuthService
 	HMACAuths         AbstractHMACAuthService
 	JWTAuths          AbstractJWTAuthService
@@ -163,6 +164,7 @@ func NewClient(baseURL *string, client *http.Client) (*Client, error) {
 
 	kong.credentials = (*credentialService)(&kong.common)
 	kong.KeyAuths = (*KeyAuthService)(&kong.common)
+	kong.LimitKeyQuotas = (*LimitKeyQuotaService)(&kong.common)
 	kong.BasicAuths = (*BasicAuthService)(&kong.common)
 	kong.HMACAuths = (*HMACAuthService)(&kong.common)
 	kong.JWTAuths = (*JWTAuthService)(&kong.common)
